@@ -1,0 +1,914 @@
+body {  
+  background-color: rgb(92, 167, 111);
+  color:#000000;
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  z-index: -10;
+  width: 100vw;
+  height: 100%;
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.5rem;
+}
+
+a{
+  text-decoration: none;
+  color:#472a2a;
+}
+
+.main-container{
+  display: block;
+  float: left;
+  color:#000000;
+  background-color: #fff;
+  position: absolute;
+  top:8vh;
+  height: 84vh;
+  widht: 100vw;
+  z-index: -5;
+  justify-content: center;
+  overflow: auto;
+}
+.main-container h1{
+  margin: 7% 0 0 5%;
+}
+
+/* 
+###############################################
+HEADER 
+This part contains the header area
+###############################################
+*/
+main{
+  width: 100%;
+  max-width: 1440px;
+  display: block;
+  float: left;
+  margin: auto;
+  padding: 0;
+}
+
+header{
+  display: block;
+  float: left;
+  position: fixed;
+  margin: auto;
+  align-items: center ;
+  height: 8vh;
+  width: 90%;
+  background-color: rgb(255, 255, 255);
+  padding:0 5% 0 5%;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  height:100%;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.logo img{
+  display: flex;
+  float: left;
+  width: 12rem;
+  max-height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width:100%;
+  position:absolute;
+  right: 0%;
+  height:90vh;
+  top:8vh;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+}
+
+.nav-links li{
+  list-style: none;
+  opacity: 0;
+  text-transform: uppercase;
+  width:100%;
+  text-align: center;
+}
+
+.nav-links li:hover {
+  background-color: #ffffff;
+}
+
+.nav-links a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.nav-links p:hover{
+  color: rgb(116, 41, 41);
+}
+
+.nav-links p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links-item{
+  width: 100%;
+  height:100%;
+  text-align: center;
+  display: inline-block;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-kerning: 5px;
+}
+
+.nav-links-item:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(116,41,41);
+}
+
+.nav-links-item p{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#mobile-menu-logo{
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  margin:5%;
+}
+
+#mobile-menu-some{
+  background-color: rgb(0, 0, 0);
+  color:rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+#mobile-menu-some p{
+  display: inline-block;
+  margin:5% 10%;
+}
+#mobile-menu-some p:hover{
+  background-color: rgb(0, 0, 0);
+  color: rgb(116, 41, 41);
+}
+.nav-active{
+  transform: translateX(0%);
+  background-color: rgb(0, 0, 0);
+  position:fixed;
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity:0;
+    transform: translateX(0px); 
+  }
+  to {
+    opacity:1;
+    transform: translateX(0px);
+  }
+}
+
+.burger div{
+  width:40px;
+  height:2px;
+  background-color: #000000;
+  border-radius: 2px;
+  transition: all .3s ease-in-out;
+  margin: 10px;
+}
+.burger {
+  display: block;
+  cursor: pointer;
+  padding: 1.6vh 5%;
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px, 12px);
+}
+.toggle .line2{
+  transform: translateX(50px);
+  background: transparent;
+}
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px, -12px);
+}
+
+
+/* 
+################################################################
+START PAGE
+This part contains the css for the start page
+################################################################
+*/
+.slideshow-container {
+  display: block;
+  float: left; 
+  width:100%;
+  height: 40vh;
+  position: relative;
+}
+.mySlides {
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  width:100%;
+  max-width: 100%;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
+  margin:0; 
+  background-color: #000;
+}
+.mySlides img{
+  display: block;
+  float: left;
+  width:100%;
+  height: 40vh;
+  max-height: 40vh;
+  opacity: 0.6;
+}
+/*Prev & Next-buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -3%;
+  padding: 3%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Caption text */
+.text {
+  display: flex;
+  position: absolute;
+  text-align: right;
+  color: #ffffff;
+  bottom: 7%;
+  right: 5%;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 4em;
+  text-shadow: -5px 5px #000;
+} 
+.slider-dots{
+text-align: center;
+}
+.dot {
+  cursor: pointer;
+  height: 0.5rem;
+  width: 0.5rem;
+  margin: 0 1%;
+  background-color: #cecece;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  position: relative;
+  top: -1.5em;
+}
+.active, .dot:hover {
+  background-color: #472a2a;
+}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.top-banner{
+  background-color: #303030;
+  display: block;
+  float: left;
+  width: 90%;
+  padding:0 5% 1% 5%;
+  color: #fff;
+  margin:0 0 1% 0;
+}
+.top-banner h2{
+  font-size: 1rem;
+}
+.top-banner-image img{
+  width:100%;
+}
+
+.push-section{
+  background-color: rgb(255, 255, 255);
+  display: block;
+  float: left;
+  width:90%;
+  padding:2% 5%;
+  text-transform: uppercase;
+}
+.top-push{
+  display: inline-block;
+  min-height: 20%;
+  width: 100%;
+  margin:5% 0 5% 0;
+}
+.push-image{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin:2% 0 0 0;  
+}
+.push-image img{
+  width:100%;
+  height:100%;
+  display: block;
+  float: left;
+}
+.push-image-textbox{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  height: 5%; 
+  padding: 5% 10%;
+  background-color: rgba(0,0,0, 0.8);
+  color: #fff;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1rem;
+  z-index: 3;
+}
+
+.info-section{
+  background-color: #472a2a;
+  display: block;
+  float: left;
+  width:90%;
+  align-items: center;
+  padding:5%;
+  color: #fff;
+  margin: 0 0 5% 0;
+}
+.info-holder{
+  width: 100%;
+  margin: 2% 0 0 0;
+}
+.info-text{
+  
+}
+
+.section-some{
+  display: block;
+  float: left;
+  width: 90%;
+  padding:0 5%;
+}
+.some-container{
+  display: inline-block;
+  width:100%;
+  padding: 2% 0 5% 0;
+}
+#some-container-soundcloud iframe{
+  width:100%;
+  height: 25vh;
+  margin: 2% 0 0 0;
+}
+#some-container-insta{
+  margin: 2% 0 0 0;
+  background-color: black;
+  color: #fff;
+  font-size: small;
+  font-style: italic;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10%;
+}
+
+/* 
+################################################################
+DEFAULT PAGES
+This part contains the css for the default pages
+################################################################
+*/
+
+.heading-section{
+  width: 100%; 
+  display: block;
+  float: left;
+  padding:0;
+  margin:0 0 7% 0;
+}
+.heading-section h2{
+  margin: 2% 0;
+}
+.heading-section-image{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.heading-section-image img{
+  width:100%;
+  display: block;
+  float: left;
+}
+.heading-image-textbox{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  height: 5%; 
+  padding: 5% 10%;
+  background-color: rgba(0,0,0, 0.8);
+  color: #fff;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.2rem;
+}
+
+.post-container{
+  display: block;
+  float: left;
+  width:90%;
+  max-width: 100%;
+  padding:0% 5% 5% 5%;
+}
+.post-part{
+  width:100%;
+  margin: 5% auto;
+}
+.post-text-holder{
+
+}
+#post-cred{
+  text-transform: uppercase;
+  color: #472a2a;
+  font-size: small;
+  font-style: italic;
+  margin: 5% 0 3% 0;
+}
+.post-text{
+  width:100%;
+  margin: 3% auto;
+}
+
+.post-banner{
+  max-width: 100vw;
+  background-color: #303030;
+  color:#fff;
+  margin: 5% 0;
+  z-index: -10;
+}
+.post-banner h3{
+  font-size: small;
+}
+.post-banner-image{
+  max-width: 100vw;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.post-banner-image img{
+  width: 100%;
+  margin:2% 0 2% 0;
+}
+
+.read-more-section{
+  display: block;
+  float: left;
+  width: 90%;
+  padding:5%;
+  text-transform: uppercase;
+  z-index: -10;
+}
+.read-more-image{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin:2% 0 7% 0;
+}
+.read-more-image img{
+  width:100%;
+  display: block;
+  float: left;
+}
+.read-more-image-textbox{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+  height: 5%; 
+  padding: 5% 10%;
+  background-color: rgba(0,0,0, 0.8);
+  color: #fff;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.2rem;
+}
+
+/* 
+################################################################
+LIST PAGES
+This part contains the css for the list pages
+################################################################
+*/
+
+.list-section{
+  display: block;
+  float: left;
+  width: 90%;
+  padding:2% 5%;
+  text-transform: uppercase;
+}
+.list-image{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin:0 0 5% 0;
+}
+.list-image img{
+  width:100%;
+  display: block;
+  float: left;
+}
+.list-image-textbox{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 10%;
+  height: 2%; 
+  padding: 5% 10%;
+  background-color: rgba(0,0,0, 0.8);
+  color: #fff;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.2rem;
+}
+
+.list-banner{
+  display: block;
+  float: left;
+  max-width: 100vw;
+  padding:5%;
+  text-transform: uppercase;
+  background-color: #303030;
+  color: #fff;
+  margin:0 0 5% 0;
+}
+.list-banner h3{
+  font-size: small;
+}
+.list-banner-image{
+  max-width: 100vw;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-banner-image img{
+  width: 100%;
+  margin:2% 0 2% 0;
+}
+
+/* 
+#######################################################
+CONTACT PAGE
+This part contains the css for the contact page
+#######################################################
+*/
+.main-container-contact{
+  display: block;
+  float: left;
+  color:#000000;
+  background-color: #fff;
+  position: absolute;
+  top:8vh;
+  height: 90vh;
+  widht: 100vw;
+  z-index: -5;
+  justify-content: center;
+  overflow: auto;
+}
+.main-container-contact h1{
+  margin: 7% 0 0 5%;
+}
+
+.mapouter{
+  position:relative;
+  text-align:center
+  height:25vh;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 0 0 0;
+}
+.gmap_canvas{
+  overflow:hidden;
+  background:none!important;
+  width:100%;
+  display: block;
+  float: left;
+}
+.gmap_canvas iframe{
+  width:100%;
+  height:25vh;
+}
+
+.post-adress-holder{
+  align-items: center;
+  justify-content: center;
+}
+.post-adress{
+  width:100%;
+  margin: 3% auto;
+  text-align: center;
+}
+
+
+/* 
+#######################################################
+FOOTER
+This part contains the footer 
+#######################################################
+*/
+footer{
+  display: block;
+  float: left;
+  width: 100%;
+}
+.bottom-menu{
+  position: fixed;
+  height: 8vh;
+  width:100vw;
+  text-transform: uppercase;
+  bottom: 0px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  z-index: -5;
+}
+
+.bottom-menu a{
+  color: rgba(255,255,255, 1);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.bottom-menu p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-menu-item{
+  width: 100%;
+  height:100%;
+  bottom: 2vh;
+  text-align: center;
+  display: inline-block;
+  font-size: xx-large;  
+}
+
+.bottom-menu-item:hover{
+  background-color: #742929;
+}
+
+.bottom-menu-item p{
+  width: 100%;
+  height:6vh;
+  max-height: 6vh;
+  bottom: 2vh;
+  cursor: pointer;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+#copyright {
+  position: fixed;
+  width: 100%;
+  height:2vh;
+  bottom: 0vh;
+  color: #000000;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: xx-small;
+}
+
+@media screen and (min-width: 1024px){
+  nav{
+    margin: 0;
+  }
+  .logo img{
+    display: inline-block;
+    float: left;
+    width: 12rem;
+    margin: 2% 0 0 0%;
+  }
+  .nav-links{
+    width:60%;
+    flex-direction: row;
+    transform: translateX(0%);
+    transition: none;
+    position: relative;
+    right: auto;
+    height:auto;
+    top:auto;
+    align-items: center;
+  }
+  .nav-links li{
+    opacity: 1;
+    width:auto;
+    padding:0;
+    letter-spacing: 3px;
+    padding:0;
+  }
+  .nav-links a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    font-size:1.2rem;
+  }
+  #mobile-menu-logo{
+    display: none;
+  }
+  #mobile-menu-some{
+    display: none;
+  }
+  .burger {
+    display: none;
+  }
+
+  .main-container{
+    height: 90vh;
+  }
+  .top-banner{
+    background-color: #303030;
+    display: block;
+    float: left;
+    width: 90%;
+    height:10vh;
+    padding:0 5% 1% 5%;
+    color: #fff;
+    margin:0 0 1% 0;
+  }
+  .top-banner h2{
+    font-size: 1rem;
+  }
+  .top-banner-image img{
+    max-width:100%;
+    height:5rem;
+  }
+  
+  .push-section{
+    background-color: rgb(255, 255, 255);
+    display: block;
+    float: left;
+    width:90%;
+    padding:0 5%;
+    text-transform: uppercase;
+  }
+  .top-push{
+    display: inline-block;
+    width: 29.71%;
+    margin-right: 5%;
+  }
+  .push-image{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center; 
+  }
+  .top-push:last-of-type{
+    margin-right: 0;
+  }
+  .push-image img{
+    width:100%;
+    height:100%;
+    display: block;
+    float: left;
+  }
+  .push-image-textbox{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 6.71%;
+    height: 2%; 
+    background-color: rgba(0,0,0, 0.6);
+    color: #fff;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1rem;
+    z-index: 3;
+  }
+  
+  .info-section{
+    background-color: #472a2a;
+    display: block;
+    float: left;
+    width:90%;
+    align-items: center;
+    padding:5%;
+    color: #fff;
+    margin: 0;
+  }
+  .info-holder{
+    width: 100%;
+    margin: 2% 0 0 0;
+  }
+  .info-text{
+    
+  }
+  
+  .section-some{
+    display: flex;
+    float: left;
+    width: 90%;
+    padding:3% 5%;
+  }
+  .some-container{
+    display: block;
+    width:47.5%;
+    height:25vh;
+    margin:0;
+  }
+  .some-container:first-of-type{
+    margin:0 5% 0 0;
+  }
+  #some-container-soundcloud{
+    display: block;
+    float: left;
+    width:100%;
+    height: 100%;
+  }
+  #some-container-insta{
+    display: flex;
+    width:80%;
+    height:100%;
+    background-color: black;
+    color: #fff;
+    font-size: small;
+    font-style: italic;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+  }
+  #some-container-insta p{
+    display: inline-block;
+    float: left;
+  }
+
+  .bottom-menu{
+    height:2vh;
+  }
+  .bottom-menu .bottom-menu-item{
+    display: none ;
+  }
+
+  #copyright{
+    position: flex;
+  }
+}
